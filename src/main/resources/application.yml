@@ -8,11 +8,9 @@ spring:
     gateway:
       routes:
         - id: core-service
-          uri: http://core-service:8081
+          uri: http://localhost:8081
           predicates:
             - Path=/products/**
+remote:
+  core: http://localhost:8081
 
-
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
