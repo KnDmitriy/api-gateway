@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: core-service
+          uri: http://core-service:8081
+          predicates:
+            - Path=/products/**
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
